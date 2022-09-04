@@ -18,7 +18,7 @@ class Engine(object):
     
     def play(self):
         current_scene = self.scene_map.opening_scene()
-        last_scene = self.scene_map.next_scene('finshed')
+        last_scene = self.scene_map.next_scene('finished')
          
         while current_scene != last_scene:
             next_scene_name = current_scene.enter()
@@ -54,9 +54,9 @@ class CentralCorridor(Scene):
             about to pull a weapon to blast you.
             """))
             
-        action = input("> ")
+        action = input("Choose your action shoot, dodge and tell a joke\n> ")
         
-        if action == "shoot!":
+        if action == "shoot":
             print(dedent("""
             Quick on the draw you yank out your blaster and fire
             it at the Gothon. His clown costume is flowing and
@@ -69,7 +69,7 @@ class CentralCorridor(Scene):
             """))
             return 'death'
         
-        elif action == 'dodge!':
+        elif action == 'dodge':
             print(dedent("""
                 Like a world class boxer you dodge, weave, slip and
                 slide right as the Gothon's blaster cranks a laser
